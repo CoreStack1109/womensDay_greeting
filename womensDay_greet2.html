@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Women's Day Mommmyyyy</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(120deg,#ff9a9e,#fad0c4);
+    font-family:Arial;
+    overflow:hidden;
+}
+
+/* Card */
+.card{
+    width:300px;
+    height:200px;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    text-align:center;
+    padding:20px;
+    transition:0.5s;
+}
+
+.card.open{
+    height:300px;
+}
+
+.message{
+    display:none;
+    font-size:20px;
+    color:#c2185b;
+}
+
+.card.open .message{
+    display:block;
+}
+
+/* Hearts */
+.heart{
+    position:absolute;
+    color:red;
+    font-size:20px;
+    animation:float 5s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+/* Flowers */
+.flower{
+    position:absolute;
+    font-size:22px;
+    animation:fall 7s linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-10vh);
+    }
+    to{
+        transform:translateY(100vh);
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+</audio>
+
+<div class="card" onclick="openCard(this)">
+<div class="message">
+🌸 Happy Women's Day Ammaaaa 🌸 <br><br> 
+cute , sweet mummy vi nuvve kadha...
+mommyy mommy mommy mommy mommmyyyyyy...
+You are my strength, my inspiration, my best friend.
+Thank you for everything you do.  
+❤️ Love You Mom ❤️
+</div>
+
+<div class="click">sweet Mommy click here 💌</div>
+</div>
+
+<script>
+
+function openCard(card){
+card.classList.add("open");
+document.querySelector(".click").style.display="none";
+}
+
+/* Create hearts */
+for(let i=0;i<20;i++){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(3+Math.random()*3)+"s";
+document.body.appendChild(heart);
+}
+
+/* Create flowers */
+for(let i=0;i<15;i++){
+let flower=document.createElement("div");
+flower.className="flower";
+flower.innerHTML="🌸";
+flower.style.left=Math.random()*100+"vw";
+flower.style.animationDuration=(5+Math.random()*5)+"s";
+document.body.appendChild(flower);
+}
+
+</script>
+
+</body>
+</html>
